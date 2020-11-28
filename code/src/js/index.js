@@ -1,6 +1,7 @@
 import '../scss/main.scss';
 import { greeting } from './functions/menu';
-import { getUsers, filterWomen, createProfile } from './functions/generateUsers';
+import { getUsers, filterUserByGender, createProfile } from './functions/generateUsers';
+import { addUserToDOM } from './functions/generateDOM';
 
 console.log('index loaded');
 // menu();
@@ -26,13 +27,21 @@ const init = async () => {
 	// filterWomen(testObj);
 	const users = await getUsers();
 	// console.log(users);
-	const filtered = filterWomen(users);
-	// console.log(filtered);
+	const filteredWomen = filterUserByGender(users, 'female');
+	console.log(filteredWomen);
+	const filteredMen = filterUserByGender(users, 'male');
+	console.log(filteredMen);
 	// console.log(filterWomen());
 
-	const cp = createProfile(filtered);
-	console.log(cp);
+	const females = createProfile(filteredWomen);
+	const males = createProfile(filteredMen);
+	// console.log(cp);
 	// cp;
+
+	// add user to dom
+
+	addUserToDOM(males, 'men');
+	addUserToDOM(females, 'women');
 };
 
 init();
