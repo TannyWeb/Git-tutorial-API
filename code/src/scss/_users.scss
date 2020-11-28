@@ -1,0 +1,22 @@
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	text-align: center;
+	gap: 15px;
+	.card {
+		padding: 10px;
+	}
+
+	&.wrapper-men {
+		margin-bottom: 50px;
+		.card {
+			border: 1px solid red;
+		}
+	}
+
+	&.wrapper-women {
+		.card {
+			border: 1px solid green;
+		}
+	}
+}
