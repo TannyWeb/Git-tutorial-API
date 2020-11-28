@@ -14,23 +14,36 @@ export const filterWomen = (users) => {
 };
 
 export const createProfile = (users) => {
-	let htmlString = '';
 	const el = document.createElement('div');
-	el.classList.add('main-wrapper');
-	const name = document.createElement('div');
-	name.classList.add('user-name');
+	el.classList.add('wrapper');
+	// const html = users
+	// 	.map(
+	// 		(user) =>
+	// 			`
+	// 		<div class="card">
+	// 			<img class="card-img" src="${user.picture.thumbnail}" />
+	// 			<h2 class="card-title">${user.name.first} ${user.name.last}</h2>
+	// 			<p class="card-subtitle">${user.location.city}, ${user.location.country}</p>
+	//         </div>
+	// 		`
+	// 	)
+	// 	.join(' ');
+
+	let html = '';
 
 	for (let user of users) {
-		// console.log(user);
-		htmlString += `
-		<div class="user-profile">
-			<div class="name"> My name is ${user.name.first} ${user.name.last}</div>
-		</div>
-		`;
+		html += `
+			<div class="card">
+				<img class="card-img" src="${user.picture.thumbnail}" />
+				<h2 class="card-title">${user.name.first} ${user.name.last}</h2>
+				<p class="card-subtitle">${user.location.city}, ${user.location.country}</p>
+            </div>`;
 	}
 
 	// return htmlString;
 	// el.appendChild(htmlString);
-	el.append(htmlString);
-	console.log(el);
+	// el.appendChild(html);
+	el.innerHTML = html;
+	document.querySelector('body').appendChild(el);
+	// console.log(html);
 };

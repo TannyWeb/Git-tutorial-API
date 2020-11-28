@@ -5,7 +5,7 @@ import { getUsers, filterWomen, createProfile } from './functions/generateUsers'
 console.log('index loaded');
 // menu();
 greeting();
-// getUsers();
+getUsers();
 
 let testObj = [
 	{
@@ -27,11 +27,11 @@ const init = async () => {
 	const users = await getUsers();
 	// console.log(users);
 	const filtered = filterWomen(users);
-	// console.log(filtered);
+	console.log(filtered);
 	// console.log(filterWomen());
 
 	const cp = createProfile(filtered);
-	console.log(cp);
+	// console.log(cp);
 	// cp;
 };
 
