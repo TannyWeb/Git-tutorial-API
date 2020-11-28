@@ -39,7 +39,6 @@ const init = async () => {
 	const females = createProfile(filteredWomen);
 	const males = createProfile(filteredMen);
 
-	// add these users to the dom
 	addUserToDOM(males, 'men');
 	addUserToDOM(females, 'women');
 };
