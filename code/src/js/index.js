@@ -24,26 +24,24 @@ let testObj = [
 ];
 
 const init = async () => {
-	// filterWomen(testObj);
+	// grab users into a variable
 	const users = await getUsers();
-	// console.log(users);
+
+	// filter women by female gender
 	const filteredWomen = filterUserByGender(users, 'female');
 	console.log(filteredWomen);
+
+	// filter users by male gender
 	const filteredMen = filterUserByGender(users, 'male');
 	console.log(filteredMen);
-	// console.log(filterWomen());
 
+	// create a profile with the array of data
 	const females = createProfile(filteredWomen);
 	const males = createProfile(filteredMen);
-	// console.log(cp);
-	// cp;
 
-	// add user to dom
-
+	// add these users to the dom
 	addUserToDOM(males, 'men');
 	addUserToDOM(females, 'women');
 };
 
 init();
-
-// showWomenOnly(getUsers);
