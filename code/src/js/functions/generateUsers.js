@@ -16,7 +16,6 @@ export const filterWomen = (users) => {
 export const createProfile = (users) => {
 	const el = document.createElement('div');
 	el.classList.add('wrapper');
-	// const html = users
 	// 	.map(
 	// 		(user) =>
 	// 			`
@@ -39,11 +38,6 @@ export const createProfile = (users) => {
 				<p class="card-subtitle">${user.location.city}, ${user.location.country}</p>
             </div>`;
 	}
-
-	// return htmlString;
-	// el.appendChild(htmlString);
-	// el.appendChild(html);
 	el.innerHTML = html;
 	document.querySelector('body').appendChild(el);
-	// console.log(html);
 };
