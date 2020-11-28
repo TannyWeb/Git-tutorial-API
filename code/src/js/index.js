@@ -6,22 +6,6 @@ import { addUserToDOM } from './functions/generateDOM';
 console.log('index loaded');
 // menu();
 greeting();
-// getUsers();
-
-let testObj = [
-	{
-		name: 'tanny',
-		gender: 'male'
-	},
-	{
-		name: 'tunny',
-		gender: 'female'
-	},
-	{
-		name: 'mum',
-		gender: 'female'
-	}
-];
 
 const init = async () => {
 	// grab users into a variable
@@ -29,11 +13,11 @@ const init = async () => {
 
 	// filter women by female gender
 	const filteredWomen = filterUserByGender(users, 'female');
-	console.log(filteredWomen);
+	// console.log(filteredWomen);
 
 	// filter users by male gender
 	const filteredMen = filterUserByGender(users, 'male');
-	console.log(filteredMen);
+	// console.log(filteredMen);
 
 	// create a profile with the array of data
 	const females = createProfile(filteredWomen);
