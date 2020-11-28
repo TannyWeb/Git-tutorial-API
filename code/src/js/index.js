@@ -6,7 +6,7 @@ import { addUserToDOM } from './functions/generateDOM';
 console.log('index loaded');
 // menu();
 greeting();
-getUsers();
+// getUsers();
 
 let testObj = [
 	{
@@ -27,6 +27,7 @@ const init = async () => {
 	// filterWomen(testObj);
 	const users = await getUsers();
 	// console.log(users);
+<<<<<<< HEAD
 	const filteredWomen = filterUserByGender(users, 'female');
 	console.log(filteredWomen);
 	const filteredMen = filterUserByGender(users, 'male');
@@ -36,6 +37,14 @@ const init = async () => {
 	const females = createProfile(filteredWomen);
 	const males = createProfile(filteredMen);
 	// console.log(cp);
+=======
+	const filtered = filterWomen(users);
+	// console.log(filtered);
+	// console.log(filterWomen());
+
+	const cp = createProfile(filtered);
+	console.log(cp);
+>>>>>>> main
 	// cp;
 
 	// add user to dom
